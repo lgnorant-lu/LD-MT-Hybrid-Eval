@@ -1,0 +1,72 @@
+# Placeholder .gitignore for large data assets and local outputs
+# Update this file before the first commit based on your final data layout.
+
+# Large datasets and archives
+**/archive/**
+**/archive/plots/*.png
+Metadatas-*/
+Metadatas*/
+Benchmarks-*/
+Local_PoLL_MQM/output/
+Local_PoLL_MQM/output_smoke/
+Local_PoLL_MQM/analysis_infra/raw_stats/
+Local_PoLL_MQM/analysis_infra/dim_data/
+Local_PoLL_MQM/analysis_infra/plots_canonical/
+Local_PoLL_MQM/analysis_infra/plots_canonical_watermarked/
+Local_PoLL_MQM/analysis_infra/plots_canonical_watermarked_svd/
+Local_PoLL_MQM/analysis_infra/Interactive_Compare_Wall_V2.html
+
+# Watermark helper scripts and outputs
+Local_PoLL_MQM/scripts/watermark_plots.py
+Local_PoLL_MQM/scripts/verify_watermarks.py
+Local_PoLL_MQM/analysis_infra/*watermarked*.png
+Local_PoLL_MQM/analysis_infra/*watermarked*/
+Local_PoLL_MQM/analysis_infra/plots_canonical_copy/
+Local_PoLL_MQM/analysis_infra/plots_canonical copy/**
+Local_PoLL_MQM/analysis_infra/plots_canonical_watermarked/**
+Local_PoLL_MQM/analysis_infra/plots_canonical_watermarked_svd/**
+
+# Test directories and diagnostic outputs
+Local_PoLL_MQM/tests/e2e/
+Local_PoLL_MQM/tests/integration/
+Local_PoLL_MQM/tests/unit/
+Local_PoLL_MQM/tests/__pycache__/
+Local_PoLL_MQM/tests/diagnostic_scheduler.py
+Local_PoLL_MQM/configs/local_poll_mqm.example.json
+Local_PoLL_MQM/configs/full_run_v3_*.json
+Local_PoLL_MQM/configs/full_seven_dragon_balls.json
+Local_PoLL_MQM/configs/smoke_*.json
+Local_PoLL_MQM/configs/test_*.json
+Local_PoLL_MQM/output/scheduler_stress_test_report.json
+Local_PoLL_MQM/output/debug_raw_response.json
+Local_PoLL_MQM/output/run_manifest.json
+Local_PoLL_MQM/.coverage
+Local_PoLL_MQM/.coveragerc
+audit_test_dir/
+
+# Caches and temp
+**/__pycache__/
+**/.pytest_cache/
+**/*.log
+
+# Local notebooks and checkpoints
+**/.ipynb_checkpoints/
+**/*.ipynb
+.jupytext.toml
+
+# Local env files
+**/.env
+Local_PoLL_MQM/.env
+
+# OS files
+.DS_Store
+Thumbs.db
+*.zip
+
+# Others
+**/FINAL*.md
+Jupytext_Test/test_notebook.py
+IPYNB-PY/*.py
+IPYNB-PY/cells/
+Jupytext_Test/
+Local_PoLL_MQM/docs/*_EXECUTION.md

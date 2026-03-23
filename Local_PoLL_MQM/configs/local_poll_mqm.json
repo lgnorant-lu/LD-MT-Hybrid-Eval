@@ -1,0 +1,115 @@
+{
+  "paths": {
+    "benchmarks_root": "D:/dogepy/pythonProject/LinuxDo/Benchmarks-20260316T020328Z-3-001/Benchmarks",
+    "metadata_root": "D:/dogepy/pythonProject/LinuxDo/Metadatas-20260316T020430Z-3-001/Metadatas",
+    "datasets_dir_name": "01_Datasets",
+    "runs_dir_name": "02_Experiment_Runs",
+    "output_root": "output"
+  },
+  "runtime": {
+    "target_language": "en",
+    "blocks": ["Baseline_Standard", "Jargon_Tech", "Slang_Ambiguous"],
+    "models": [],
+    "block_sample_limits": {
+      "Baseline_Standard": 80,
+      "Jargon_Tech": 34,
+      "Slang_Ambiguous": 207
+    },
+    "require_reference_blocks": ["Baseline_Standard", "Slang_Ambiguous"],
+    "test_id_allowlist": [],
+    "random_seed": 20260316
+  },
+  "poll": {
+    "vote_threshold": 4,
+    "min_valid_judges": 5,
+    "repeat_per_judge": 1,
+    "request_batch_size": 20,
+    "max_retries": 3,
+    "backoff_seconds": 3.0,
+    "span_overlap_threshold": 0.5,
+    "judge_slots": [
+      {
+        "slot_id": "gpt_5_01",
+        "provider": "openai",
+        "model": "gpt-5",
+        "endpoint": "https://ai.centos.hk",
+        "api_key_env": "GPT_5_KEY",
+        "timeout_seconds": 240,
+        "temperature": 0.0
+      },
+      {
+        "slot_id": "claude_4_5_01",
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5",
+        "endpoint": "https://ai.centos.hk",
+        "api_key_env": "CLAUDE_4_6_KEY",
+        "timeout_seconds": 240,
+        "temperature": 0.0
+      },
+      {
+        "slot_id": "gemini_3_flash_preview_01",
+        "provider": "gemini",
+        "model": "gemini-3-flash-preview",
+        "endpoint": "https://x666.me/v1",
+        "api_key_env": "GEMINI_3_FLASH_KEY",
+        "timeout_seconds": 240,
+        "temperature": 0.0
+      },
+      {
+        "slot_id": "deepseek_v3_2_sf",
+        "provider": "openai",
+        "model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+        "endpoint": "https://api.siliconflow.cn",
+        "api_key_env": "SILICON_FLOW_KEY",
+        "timeout_seconds": 480,
+        "temperature": 0.0
+      },
+      {
+        "slot_id": "glm_4_7_sf",
+        "provider": "openai",
+        "model": "zai-org/GLM-4.6V",
+        "endpoint": "https://api.siliconflow.cn",
+        "api_key_env": "SILICON_FLOW_KEY",
+        "timeout_seconds": 480,
+        "temperature": 0.0
+      },
+      {
+        "slot_id": "qwen_3_5_sf",
+        "provider": "openai",
+        "model": "Qwen/Qwen3.5-397B-A17B",
+        "endpoint": "https://api.siliconflow.cn",
+        "api_key_env": "SILICON_FLOW_KEY",
+        "timeout_seconds": 480,
+        "temperature": 0.0
+      },
+      {
+        "slot_id": "minimax_m2_5_sf",
+        "provider": "openai",
+        "model": "Pro/MiniMaxAI/MiniMax-M2.5",
+        "endpoint": "https://api.siliconflow.cn",
+        "api_key_env": "SILICON_FLOW_KEY",
+        "timeout_seconds": 480,
+        "temperature": 0.0
+      }
+    ]
+  },
+  "scoring": {
+    "omega_1": 0.4,
+    "omega_2": 0.6,
+    "threshold": 60.0,
+    "alpha": 0.2,
+    "delta": 0.5,
+    "metric_mode": "auto",
+    "objective_language": "en",
+    "comet_model": "Unbabel/wmt22-comet-da",
+    "comet_batch_size": 64,
+    "no_reference_chrf": 65.0,
+    "no_reference_comet": 65.0
+  },
+  "smoke": {
+    "enabled": false,
+    "judge_count": 1,
+    "repeat_per_judge": 1,
+    "max_items_per_block": 2
+  }
+}

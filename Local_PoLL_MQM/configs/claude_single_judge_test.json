@@ -1,0 +1,57 @@
+{
+  "paths": {
+    "benchmarks_root": "D:/dogepy/pythonProject/LinuxDo/Benchmarks-20260316T020328Z-3-001/Benchmarks",
+    "metadata_root": "D:/dogepy/pythonProject/LinuxDo/Metadatas-20260316T020430Z-3-001/Metadatas",
+    "datasets_dir_name": "01_Datasets",
+    "runs_dir_name": "02_Experiment_Runs",
+    "output_root": "output/claude_single_judge_test"
+  },
+  "runtime": {
+    "target_language": "zh",
+    "blocks": ["Baseline_Standard", "Jargon_Tech", "Slang_Ambiguous"],
+    "models": [],
+    "block_sample_limits": {
+      "Baseline_Standard": 80,
+      "Jargon_Tech": 34,
+      "Slang_Ambiguous": 207
+    },
+    "require_reference_blocks": ["Baseline_Standard", "Slang_Ambiguous"],
+    "test_id_allowlist": [],
+    "random_seed": 20260316
+  },
+  "poll": {
+    "vote_threshold": 1,
+    "min_valid_judges": 1,
+    "repeat_per_judge": 1,
+    "judge_parallelism": 6,
+    "request_batch_size": 20,
+    "max_retries": 5,
+    "backoff_seconds": 10.0,
+    "span_overlap_threshold": 0.5,
+    "judge_slots": [
+      {
+        "slot_id": "claude_4_6_01",
+        "provider": "openai",
+        "model": "claude-haiku-4-5",
+        "endpoint": "https://ai.centos.hk/v1",
+        "api_key_env": "CLAUDE_4_6_KEY",
+        "timeout_seconds": 240,
+        "temperature": 0.0
+      }
+    ]
+  },
+  "scoring": {
+    "metric_mode": "real",
+    "objective_language": "en",
+    "alpha": 0.2,
+    "delta": 0.5,
+    "threshold": 60.0,
+    "omega_1": 0.4,
+    "omega_2": 0.6,
+    "metrics_parallelism": 4,
+    "comet_model": "D:/Caches/huggingface/hub/models--Unbabel--wmt22-comet-da/snapshots/2760a223ac957f30acfb18c8aa649b01cf1d75f2/checkpoints/model.ckpt",
+    "comet_batch_size": 16,
+    "no_reference_chrf": 65.0,
+    "no_reference_comet": 65.0
+  }
+}
